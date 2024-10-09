@@ -7,7 +7,7 @@ function UsersCard({name,avatar,posts,followers,address}) {
     }
   return (
     <div className='userCard'>
-        <img src={avatar} alt={name} />
+        <img src={avatar} alt={name} style={{width: '100px', borderRadius:'50%' , backgroundColor:'blue'}} />
         <div>
             <h2 data-testid="user_name">{name}</h2>
             <p data-testid="user_address">{address}</p>

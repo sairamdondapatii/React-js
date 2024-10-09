@@ -1,0 +1,32 @@
+.title{
+    text-align: center;
+}
+/* .user{
+    border: 1px solid teal;
+} */
+.userCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    column-gap: 50px;
+}
+.userCard>button{
+    width: 100px;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid black;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.courses{
+   max-width: 500px;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+   flex-wrap: wrap;
+}
