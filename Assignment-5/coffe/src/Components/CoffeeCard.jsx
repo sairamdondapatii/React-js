@@ -1,9 +1,14 @@
 import React from 'react'
 
-const CoffeeCard = ({data}) => {
+const CoffeeCard = ({id, title,description,image,price}) => {
     
   return (
-    <div>CoffeeCard</div>
+    <div>
+      <img src={image} alt={title} />
+      <p>{price}</p>
+      <p>{title}</p>
+      <p>{description}</p>
+    </div>
   )
 }
 
