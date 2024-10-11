@@ -1,0 +1,40 @@
+.title{
+    text-align: center;
+}
+.btn{
+    display: block;
+    margin: auto;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+.coffeeCard{
+    border: 2px solid black;
+    max-width: 700px;
+    display: flex;
+    gap: 20px;
+}
+.coffeeCard>img{
+    width: 300px;
+    
+}
+@media  screen and (max-width:767px) {
+    .coffeeCard{
+        flex-direction: column;
+    }
+    .coffeeCard>img{
+        width: 100%;
+    }
+}

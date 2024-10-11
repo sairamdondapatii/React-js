@@ -19,10 +19,12 @@ const Coffee = () => {
   
   return (
     <>
-    <button onClick={getData}>Get Coffee</button>
-    {getDataFromDb.map((item)=>{
-      return <CoffeeCard key={item.id} {...item} />
-    })}
+    <button onClick={getData} className='btn'>Get Coffee</button>
+    <div className='cards'>
+      {getDataFromDb.map((item)=>{
+        return <CoffeeCard key={item.id} {...item} />
+      })}
+    </div>
     </>
   )
 }
