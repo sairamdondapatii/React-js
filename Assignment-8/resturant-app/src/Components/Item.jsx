@@ -1,9 +1,6 @@
 import React from 'react'
 
 const Item = ({itemData}) => {
-    console.log(itemData)
-    console.log(itemData[0].payment.cash)
-    
   return (
     <div className='items'>
         {itemData.map((item)=>{
