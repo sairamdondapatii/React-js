@@ -24,9 +24,10 @@ const [showdata,setShowData] = useState({})
 
 function handleSubmit(e){
     e.preventDefault();
-    setFormState(true)
-    setShowData(formData)
-    setFormData(initialObj)
+    setFormState(true) //true ---> state = false 
+    setFormData(initialObj) // intialobj ----> state = formdata = {somedata}
+    setShowData(formData) // formdata = {somedata} ---> state = {}
+    // after re rendering state gets updated
 }
 
 function handleChange(e){
@@ -42,7 +43,7 @@ function handleChange(e){
     </div>
       <div className='form-container'>
         <Form formData={formData} handleSubmit={handleSubmit} handleChange ={handleChange}/>
-        {formState ? <ShowFormData showdata={showdata}  /> : null}
+        {formState && <ShowFormData showdata={showdata}  />}
       </div>
     </>
     
