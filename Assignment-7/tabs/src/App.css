@@ -1,0 +1,52 @@
+.tabs-container{
+    display: flex;
+    gap: 50px;
+    
+}
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+}
+.job-btn{
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+}
+.job-btn:hover{
+    cursor: pointer;
+    color: #14b8a6;
+}
+.job-btn.active{
+    color: #14b8a6;
+}
+.job-info{
+    max-width: 700px;
+}
+.job-info>p{
+    color: #334155;
+    line-height: 1.5rem;
+}
+.dutie{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.company-name{
+    padding: 6px 12px;
+    background-color: #cbd5e1;
+    color: #334155;
+    border-radius: 3px;
+}
+.job-date{
+    color: #64748b;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.job-icon{
+    color: #14b8a6;
+    font-size: 36px;
+    font-weight: bold;
+}

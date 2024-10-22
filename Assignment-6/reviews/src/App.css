@@ -1,0 +1,29 @@
+.reviewCard{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+.reviewCard>div>button{
+    padding: 7px 40px;
+    background-color: #C1BEFF;
+    color: #645CFF;
+    border-radius: 10px;
+    border: none;
+
+}
+.reviewCard>div>p{
+    color: #475569;
+    line-height: 24px;
+    font-size: 16px;
+
+}
+.reviewCard>div>img{
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
