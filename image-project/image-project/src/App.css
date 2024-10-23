@@ -1,0 +1,43 @@
+*{
+    font-family: sans-serif;
+}
+.dark-mode{
+    background-color: #333;
+    color: #f0f0f0;
+}
+.toggle-container{
+    max-width: 1023px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.title{
+    text-align: center;
+    color: dodgerblue;
+}
+.toggle-icon{
+    font-size: 1.5rem;
+}
+.form-container>form{
+    max-width: 1023px;
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr auto;
+    
+}
+form>input{
+    font-size: 26px;
+    padding: 10px 0px;
+    border: 2px solid grey;
+}
+input[type='submit']{
+    padding: 0px 10px;
+    cursor: pointer;
+    background-color: dodgerblue;
+    color: white;
+}
