@@ -17,7 +17,7 @@ const Form = () => {
         </div>
         <form onSubmit={handlesubmit}>
             <input type="text" name="search" id="search" placeholder='search for images ...' />
-            <input type="submit" value="search" />
+            <button type='submit'>Search</button>
         </form>
     </div>
   )

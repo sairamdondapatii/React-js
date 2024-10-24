@@ -19,7 +19,7 @@ const getInitialMode = ()=>{
 const DarkModeContextProvider = ({children}) => {
  
   const [isDarkMode,setIsDarkMode] = useState(getInitialMode());
-  const [searchvalue,setSearchvalue] = useState('');
+  const [searchvalue,setSearchvalue] = useState('cat');
   function toggleDark(){
     let newMode = !isDarkMode;
     setIsDarkMode(newMode);
