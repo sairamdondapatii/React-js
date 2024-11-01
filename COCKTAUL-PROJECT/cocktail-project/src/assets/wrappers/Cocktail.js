@@ -28,7 +28,7 @@ const Wrapper = styled.section`
         letter-spacing:2px;
         font-weight:700;
         color:var(--grey-900);
-        span{
+        span:nth-child(1){
             background-color:var(--primary-300);
             color:var(--primary-700);
             padding:2px 6px;
