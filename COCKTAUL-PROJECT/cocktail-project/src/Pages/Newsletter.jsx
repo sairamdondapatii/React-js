@@ -33,15 +33,15 @@ const Newsletter = () => {
           <h3 className='title'>Our Newsletter</h3>
           <div className='form-row'>
             <label htmlFor="name" className='form-label'>Name</label>
-            <input type="text" id='name' name='name' className='form-input' defaultValue='ram' />
+            <input type="text" id='name' name='name' className='form-input' defaultValue='Dondapati' required/>
           </div>
           <div className='form-row'>
-            <label htmlFor="lname" className='form-label'>Last Name</label>
-            <input type="text" id='lname' name='lname' className='form-input' />
+            <label htmlFor="lastName" className='form-label'>Last Name</label>
+            <input type="text" id='lastName' name='lastName' className='form-input' defaultValue='Sai Ram' required />
           </div>
           <div className='form-row'>
-            <label htmlFor="email" className='form-label'>Email</label>
-            <input type="email" id='email' name='email' className='form-input' />
+            <label htmlFor="email" className='form-label'>email</label>
+            <input type="email" id="email" name='email' className='form-input' defaultValue='test@test.com'  required />
           </div>
           <button type='submit' className='btn btn-block' disabled={isSubmitting}>{isSubmitting? 'Submitting...' : 'Submit'}</button>
         </Form>
