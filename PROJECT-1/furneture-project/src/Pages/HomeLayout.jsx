@@ -1,13 +1,15 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import { Header, Navbar } from '../components'
 
 const HomeLayout = () => {
   return (
     <>
-        <div>
-            <p className='text-3xl bg-green-100 text-green-500'>Navbar in Future</p>
-        </div>
-        <Outlet/>
+        <Header/>
+        <Navbar/>
+        <section className='content-style pt-8'>
+          <Outlet/>
+        </section>
     </>
   )
 }

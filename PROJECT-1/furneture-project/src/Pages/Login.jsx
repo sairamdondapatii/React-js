@@ -11,7 +11,7 @@ const Login = () => {
             <FormInput label='Password' name='identifier' defaultValue='secret' type='password' />
             <div className='flex justify-evenly mt-3'>
             <SubmitBtn text='Login'/>
-            <button type='button' className='btn btn-primary text-lg'>Guest User</button>
+            <button type='button' className='btn btn-primary text-lg'>Guest User </button>
             </div>
             <p className='text-center'>Not a member yet? <Link to='/register' className='link link-primary link-hover capitalize'>Create account</Link></p>
         </Form>
