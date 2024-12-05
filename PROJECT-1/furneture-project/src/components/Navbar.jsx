@@ -20,18 +20,18 @@ const Navbar = () => {
         setTheme(newTheme)
     }
   return (
-    <nav className='bg-base-200 '>
-        <div className='navbar content-style px-0'>
+    <nav className='bg-base-300 '>
+        <div className='navbar content-style'>
             <div className="navbar-start">
                 <NavLink to='/' className='hidden lg:flex btn btn-primary text-3xl'>Store</NavLink>
                 <div className='dropdown'>
-                <label className='btn btn-ghost lg:hidden'>
-                    <FaBarsStaggered tabIndex={0} className='h-6 w-6'/>
-                </label>
-                <ul className='menu w-screen dropdown-content bg-base-100 z-[1] shadow-sm' tabIndex={0}>
-                    <Navlinks/>
-                </ul>
-            </div>
+                    <label className='btn btn-ghost lg:hidden'>
+                        <FaBarsStaggered tabIndex={0} className='h-6 w-6'/>
+                    </label>
+                    <ul className='menu w-screen lg:hidden dropdown-content bg-base-100 z-[1] shadow-sm' tabIndex={0}>
+                        <Navlinks/>
+                    </ul>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className='menu menu-horizontal' >

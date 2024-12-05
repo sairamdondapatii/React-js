@@ -1,6 +1,8 @@
 import React from 'react'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom'
-import { About, Cart, Checkout, Error, HomeLayout, Landing, Login, Orders, Products, Register, SingleProduct } from './Pages'
+import { About, Cart, Checkout, Error, ErrorElement, HomeLayout, Landing, Login, Orders, Products, Register, SingleProduct } from './Pages'
+import { loader as LandingLoader } from './Pages/Landing'
+import { loader as singleProductLoader } from './Pages/SingleProduct'
 
 const router = createBrowserRouter(
   [
@@ -12,6 +14,9 @@ const router = createBrowserRouter(
         {
           index:true,
           element:<Landing/>,
+          loader:LandingLoader,
+          errorElement:<ErrorElement/>,
+          
         },
         {
           path:'/about',
@@ -34,8 +39,9 @@ const router = createBrowserRouter(
           element:<Products/>,
         },
         {
-          path:'/singleproduct',
+          path:'/products/:id',
           element:<SingleProduct/>,
+          loader:singleProductLoader,
         },
       ]
     },

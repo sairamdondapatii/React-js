@@ -7,7 +7,7 @@ const HomeLayout = () => {
     <>
         <Header/>
         <Navbar/>
-        <section className='content-style pt-8'>
+        <section className=' pt-8'>
           <Outlet/>
         </section>
     </>
