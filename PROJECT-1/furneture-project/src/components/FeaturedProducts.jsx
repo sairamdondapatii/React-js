@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from './Title'
-import Products from './Products'
+import Products from './ProductsGrid'
 
 const FeaturedProducts = () => {
   return (

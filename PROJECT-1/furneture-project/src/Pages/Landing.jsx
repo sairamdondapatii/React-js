@@ -4,8 +4,8 @@ import { customFetch } from '../Utils'
 
 export const loader = async ()=>{
   const response = await customFetch(url);
-  const featuredProductsData = response.data.data
-  return {featuredProductsData}
+  const productsData = response.data.data
+  return {productsData}
 }
 
 const url = '/products/?featured=true'

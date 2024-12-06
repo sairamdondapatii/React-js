@@ -13,8 +13,14 @@ const SingleProduct = () => {
     const {price,image,title,description,colors,company} = products.attributes;
     const [productColor,setProductColor] = useState(colors[0])
     const [quantity,setQuantity] = useState(1)
+    const handleQuantity = (e)=>{
+      setQuantity(parseInt(e.target.value))
+    }
+    const handleCart = ()=>{
+      console.log('added to cart')
+    }
   return (
-    <section className='p-16'>
+    <section className=' p-8 lg:p-16 lg:pt-0'>
       <div className='text-md breadcrumbs'>
         <ul>
           <li><Link to='/'>Home</Link></li>
@@ -25,26 +31,40 @@ const SingleProduct = () => {
         <div>
           <img src={image} className='h-72 lg:h-96 rounded-xl w-96 lg:w-full object-cover' />
         </div>
-        <div>
+        <div className='flex flex-col justify-center items-start'>
           <h1 className='text-3xl capitalize font-bold'>{title}</h1>
           <p className='text-xl text-neutral-content font-bold'>{company}</p>
           <p className='mt-6 text-xl'>{formatedPrice(price)}</p>
-          <p className='mt-6 leading-8'>{description}</p>
+          <p className='mt-6 leading-6'>{description}</p>
         </div>
-        <div>
-          <h4 className='text-xl'>Colors/Variants</h4>
-          <div className='mt-2'>
-            {colors.map((color)=>{
-              return (
-              <button 
-                type='button' 
-                key={color} 
-                className={`badge w-10 h-6 mr-2 ${color === productColor && "border-2 border-secondary"}`} 
-                style={{backgroundColor:color}} 
-                onClick={()=> setProductColor(color)}>
-              </button>)
-            })}
+        <div className='flex flex-wrap justify-between items-center'>
+          <div>
+            <h4 className='text-xl tracking-wide'>Colors/Variants</h4>
+            <div className='mt-2'>
+              {colors.map((color)=>{
+                return (
+                <button 
+                  type='button' 
+                  key={color} 
+                  className={`badge w-10 h-6 mr-2 ${color === productColor && "border-2 border-secondary"}`} 
+                  style={{backgroundColor:color}} 
+                  onClick={()=> setProductColor(color)}>
+                </button>)
+              })}
+            </div>
           </div>
+          <div>
+            <label className='label'><h4 className='tracking-wide text-md text-xl '>Select Quantity</h4></label>
+            <select value={quantity} className='select select-bordered w-full max-w-16 select-sm' onChange={handleQuantity}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+        <div className='grid grid-cols-2 gap-6 lg:gap-10'>
+          <button type='button' disabled className='btn btn-secondary cursor-not-allowed' >Buy Now</button>
+          <button type='button' className='btn btn-secondary' onClick={handleCart}>Add to cart</button>
         </div>
       </div>
       

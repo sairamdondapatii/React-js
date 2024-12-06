@@ -3,6 +3,7 @@ import { RouterProvider,createBrowserRouter } from 'react-router-dom'
 import { About, Cart, Checkout, Error, ErrorElement, HomeLayout, Landing, Login, Orders, Products, Register, SingleProduct } from './Pages'
 import { loader as LandingLoader } from './Pages/Landing'
 import { loader as singleProductLoader } from './Pages/SingleProduct'
+import {loader as productsLoader} from './Pages/Products'
 
 const router = createBrowserRouter(
   [
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
         {
           path:'/products',
           element:<Products/>,
+          loader:productsLoader,
         },
         {
           path:'/products/:id',

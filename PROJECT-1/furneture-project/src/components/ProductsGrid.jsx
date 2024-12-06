@@ -2,11 +2,11 @@ import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { formatedPrice } from '../Utils'
 
-const Products = () => {
-    const {featuredProductsData} = useLoaderData()
+const ProductsGrid = () => {
+    const {productsData} = useLoaderData()
   return (
-    <div className='p-16 pt-3 grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
-        {featuredProductsData.map((product)=>{
+    <div className='p-8 pt-3 grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
+        {productsData.map((product)=>{
             const {price,image,title} = product.attributes;
             return <Link to={`/products/${product.id}`} key={product.id} className='card w-full shadow-xl hover:shadow-2xl'>
                 <figure className='px-3 pt-3'>
@@ -22,4 +22,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default ProductsGrid
