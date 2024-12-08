@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { customFetch, formatedPrice } from '../Utils'
 import { Link, useLoaderData } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../features/cart/cartSlice'
 
 
 export const loader = async ({params})=>{
@@ -13,11 +15,25 @@ const SingleProduct = () => {
     const {price,image,title,description,colors,company} = products.attributes;
     const [productColor,setProductColor] = useState(colors[0])
     const [quantity,setQuantity] = useState(1)
+    const dispatch = useDispatch()
+
     const handleQuantity = (e)=>{
       setQuantity(parseInt(e.target.value))
     }
+
+    const cartProduct =  {
+      cartID:products.id + productColor,
+      productID: products.id,
+      image,
+      title,
+      price,
+      productColor,
+      company,
+      quantity,
+    }
+
     const handleCart = ()=>{
-      console.log('added to cart')
+      dispatch(addItem({product:cartProduct}))
     }
   return (
     <section className=' p-8 lg:p-16 lg:pt-0'>

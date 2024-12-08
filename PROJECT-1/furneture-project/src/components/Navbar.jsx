@@ -3,6 +3,7 @@ import { BsFillMoonFill,BsFillSunFill, BsCart3 } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
 import Navlinks from './Navlinks';
+import { useSelector } from 'react-redux';
 
 const themes = {
     winter:'winter',
@@ -19,6 +20,7 @@ const Navbar = () => {
         localStorage.setItem('theme',newTheme)
         setTheme(newTheme)
     }
+    const cartDetails = useSelector((state)=>state.cartState)
   return (
     <nav className='bg-base-300 '>
         <div className='navbar content-style'>
@@ -45,7 +47,7 @@ const Navbar = () => {
                     <BsFillMoonFill className='swap-off h-6 w-6'/>
                 </label>
                 <div className="indicator pl-2">
-                    <span className="indicator-item badge badge-xs badge-primary text-xs">2</span>
+                    <span className="indicator-item badge badge-xs badge-primary text-xs">{cartDetails.numberOfItemsInCart}</span>
                     <NavLink to='/cart' ><BsCart3 className='h-6 w-6'/></NavLink>
                 </div>
             </div>

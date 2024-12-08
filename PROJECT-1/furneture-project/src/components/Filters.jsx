@@ -8,7 +8,6 @@ import FormCheckbox from './FormCheckbox'
 const Filters = () => {
     const {metaData,params} = useLoaderData()
     const {search,company,category,order,price,shipping} = params;
-    console.log(metaData)
   return (
     <div className="collapse collapse-arrow w-full bg-base-200  mb-4">
         <input type="checkbox" name="my-accordion-2" />

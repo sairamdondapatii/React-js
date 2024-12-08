@@ -58,6 +58,9 @@ const router = createBrowserRouter(
       errorElement:<Error/>,
     },
   ],
+  {future: {
+    v7_relativeSplatPath: true,
+  },}
   
 )
 
