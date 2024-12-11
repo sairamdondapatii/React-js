@@ -15,7 +15,7 @@ const Pagination = () => {
         navigate(`${pathname}?${searchParams.toString()}`)
     }
   return (
-    <div className='text-center pb-8 lg:pb-16'>
+    <div className='text-center py-8 lg:pb-16'>
         <div className='join'>
             <button className='join-item btn capitalize' onClick={()=>{
                 let prvpage = page - 1 ;

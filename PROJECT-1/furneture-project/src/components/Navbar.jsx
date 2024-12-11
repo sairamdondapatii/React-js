@@ -3,26 +3,20 @@ import { BsFillMoonFill,BsFillSunFill, BsCart3 } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
 import Navlinks from './Navlinks';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '../features/User/UserSlice';
 
-const themes = {
-    winter:'winter',
-    dracula:'dracula',
-}
-const getTheme = localStorage.getItem('theme') || themes.winter;
-document.documentElement.setAttribute('data-theme',getTheme)
+
 const Navbar = () => {
-    const [theme, setTheme] = useState(getTheme)
+    
+    const dispatch = useDispatch();
     const handleTheme = ()=>{
-        const {winter,dracula} = themes
-        const newTheme = theme === winter ? dracula :winter;
-        document.documentElement.setAttribute('data-theme',newTheme)
-        localStorage.setItem('theme',newTheme)
-        setTheme(newTheme)
+        dispatch(toggleTheme())
     }
+
     const cartDetails = useSelector((state)=>state.cartState)
   return (
-    <nav className='bg-base-300 '>
+    <nav className='bg-base-300 sticky top-0 z-10 '>
         <div className='navbar content-style'>
             <div className="navbar-start">
                 <NavLink to='/' className='hidden lg:flex btn btn-primary text-3xl'>Store</NavLink>

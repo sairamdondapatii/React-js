@@ -4,7 +4,7 @@ import { About, Cart, Checkout, Error, ErrorElement, HomeLayout, Landing, Login,
 import { loader as LandingLoader } from './Pages/Landing'
 import { loader as singleProductLoader } from './Pages/SingleProduct'
 import {loader as productsLoader} from './Pages/Products'
-
+import {action as registerAction} from './Pages/Register'
 const router = createBrowserRouter(
   [
     {
@@ -56,6 +56,7 @@ const router = createBrowserRouter(
       path:'/register',
       element:<Register/>,
       errorElement:<Error/>,
+      action:registerAction,
     },
   ],
   {future: {

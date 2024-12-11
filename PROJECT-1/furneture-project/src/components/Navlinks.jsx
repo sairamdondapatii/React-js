@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 const links = [
@@ -8,13 +9,15 @@ const links = [
     {id:4,url:'/checkout',text:'Checkout'},
     {id:5,url:'/orders',text:'Orders'},
     {id:6,url:'/cart',text:'Cart'},
-
-
 ]
 
 const Navlinks = () => {
+  const user = useSelector((state)=>state.userState.user);
+
+
   return (
     links.map((link)=>{
+      if((link.url === '/checkout' || link.url === '/orders') && !user) return null;
         return (
             <li key={link.id}><NavLink to={link.url}>{link.text}</NavLink></li>
         )

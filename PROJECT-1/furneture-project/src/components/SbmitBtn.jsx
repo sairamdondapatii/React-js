@@ -4,7 +4,7 @@ import { useNavigation } from 'react-router-dom'
 const SbmitBtn = ({text,block}) => {
   const navigate = useNavigation()
   console.log(navigate)
-  const isSubmitting = navigate.status === 'submitting'
+  const isSubmitting = navigate.state === 'submitting'
   return (
     <button type='submit' className={`btn btn-primary text-lg ${block}`} disabled={isSubmitting}>{isSubmitting ? 'Submittiing' : text || 'Submit' } {isSubmitting && <span className="loading loading-spinner loading-xs"></span>}</button>
   )
