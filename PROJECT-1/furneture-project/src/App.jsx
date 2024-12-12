@@ -4,7 +4,12 @@ import { About, Cart, Checkout, Error, ErrorElement, HomeLayout, Landing, Login,
 import { loader as LandingLoader } from './Pages/Landing'
 import { loader as singleProductLoader } from './Pages/SingleProduct'
 import {loader as productsLoader} from './Pages/Products'
+import {loader as checkoutLoader} from './Pages/Checkout'
+import {loader as orderLoader} from './Pages/Orders'
 import {action as registerAction} from './Pages/Register'
+import {action as loginAction} from './Pages/Login'
+import {action as checkoutAction} from './components/CheckoutForm'
+import {store} from './store'
 const router = createBrowserRouter(
   [
     {
@@ -30,10 +35,13 @@ const router = createBrowserRouter(
         {
           path:'/checkout',
           element:<Checkout/>,
+          loader:checkoutLoader(store),
+          action:checkoutAction(store),
         },
         {
           path:'/orders',
           element:<Orders/>,
+          loader:orderLoader(store),
         },
         {
           path:'/products',
@@ -51,6 +59,7 @@ const router = createBrowserRouter(
       path:'/login',
       element:<Login/>,
       errorElement:<Error/>,
+      action:loginAction(store),
     },
     {
       path:'/register',

@@ -18,7 +18,7 @@ const Header = () => {
         <div className='content-style py-2 flex justify-center sm:justify-end'>
           {user ? (
             <div className='flex gap-x-6 justify-center text-xs sm:text-sm items-center'>
-              <p>Hello, {user.userName}</p>
+              <p>Hello, {user.username}</p>
               <button className='capitalize link link-hover link-primary' onClick={handleLogout}>logout</button>
             </div>
           ) : (
