@@ -28,6 +28,12 @@ const Navbar = () => {
                         <Navlinks/>
                     </ul>
                 </div>
+                {/* <details className="dropdown">
+                    <summary className="btn  lg:hidden"><FaBarsStaggered className='h-6 w-6'/></summary>
+                    <ul className='menu w-screen lg:hidden dropdown-content bg-base-100 z-[1] shadow-sm'>
+                        <Navlinks/>
+                    </ul>
+                </details> */}
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className='menu menu-horizontal' >

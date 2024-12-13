@@ -6,7 +6,7 @@ const FormInput = ({label,type,name,defaultValue,style}) => {
         <div className="label">
             <span className="label-text">{label}</span>
         </div>
-        <input type={type} name={name} defaultValue={defaultValue} className={`input input-bordered ${style}`} />
+        <input type={type} name={name} defaultValue={defaultValue} required  className={`input input-bordered ${style}`} />
     </label>
   )
 }

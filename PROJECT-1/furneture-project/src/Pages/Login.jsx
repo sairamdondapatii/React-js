@@ -22,6 +22,7 @@ export const action = (store)=> async({request}) =>{
       toast.error(error?.response?.data?.error?.message || 'Please double check your credintinals',{
         position: "bottom-left"
       })
+      return redirect('/login')
     }
   }
 
@@ -52,8 +53,8 @@ const Login = () => {
     <div className='h-screen grid place-items-center'>
         <Form method='POST' className='card w-96 bg-base-100 shadow-lg  gap-y-3 p-8'> 
             <h1 className='text-center text-4xl font-bold'>Login</h1>
-            <FormInput label='Email' name='identifier' defaultValue='test@test.com' type='text' />
-            <FormInput label='Password' name='password' defaultValue='secret' type='password' />
+            <FormInput label='Email' name='identifier'  type='text' />
+            <FormInput label='Password' name='password' type='password' />
             <div className='flex justify-evenly mt-3'>
             <SubmitBtn text='Login'/>
             <button type='button' className='btn btn-primary text-lg' onClick={loginasGuestUser}>Guest User </button>

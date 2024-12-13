@@ -10,6 +10,8 @@ import {action as registerAction} from './Pages/Register'
 import {action as loginAction} from './Pages/Login'
 import {action as checkoutAction} from './components/CheckoutForm'
 import {store} from './store'
+
+
 const router = createBrowserRouter(
   [
     {

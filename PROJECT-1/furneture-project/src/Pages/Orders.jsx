@@ -6,8 +6,8 @@ import { OrdersList, Pagination, Title } from '../components';
 
 export const loader = (store)=> async ({request})=>{
   const user = store.getState().userState.user;
-  if(!user){
-    toast.warn('you must be logged in to view orders')
+  if(!user || user.username==='Guest'){
+    toast.warn('you must be login to view orders')
     return redirect('/login')
 
   }
@@ -20,7 +20,7 @@ export const loader = (store)=> async ({request})=>{
 return {orders:response.data.data, metaData:response.data.meta}
   
  } catch (error) {
-  toast.error(error?.response?.data?.error?.message || 'Some thin went wrong try again later',{
+  toast.error(error?.response?.data?.error?.message || 'Some thing went wrong try again later',{
     position: "bottom-left"
   })
   return redirect('/login')
